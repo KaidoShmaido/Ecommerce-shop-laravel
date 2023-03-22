@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminMiddleware{
     /**
@@ -12,11 +14,12 @@ class AdminMiddleware{
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+
     public function handle($request, Closure $next)
     {
         if(Auth::check())
         {
-            if(Auth::user()->role_as == 'True')
+            if(Auth::user()->role_as == '1')
             {
                 return $next($request);
             }
@@ -29,5 +32,4 @@ class AdminMiddleware{
         {
             return redirect('/home')->with('status','Please Login First');
         }
-    }
-}
+    }}
