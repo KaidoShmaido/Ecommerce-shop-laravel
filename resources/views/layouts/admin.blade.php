@@ -9,19 +9,48 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-
+ <!--     Fonts and icons     -->
+ <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"> 
 
     <!--styles -->
 
-    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.css')}}">
+    <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
+ 
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <h1>hello</h1>
+     
+        <div class="wrapper">
+            @include('layouts.inc.sidebar')
+        </div>
 
-    <script src='{{asset("frontend/js/bootstrap.bundle.min.js")}}'></script>
+
+        <div class="main-panel">
+            @include('layouts.inc.adminnav')
+
+            <div class="content">
+                @yield('content')
+            </div>
+
+            @include('layouts.inc.adminfooter')
+
+        </div>
+
+
+ 
+
+     <script src='{{ asset("frontend/js/bootstrap.bundle.min.js") }}' defer></script>
+     <script src="{{ asset('admin/js/jquery.min.js') }}" defer></script>
+     <script src="{{ asset('admin/js/popper.min.js') }}"></script>
+     <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
+     <script src="{{ asset('admin/js/plugins/perfect-scrollbar.jquery.min.js') }}" defer></script>
+
+        @yield('scripts')
+
+    
 </body>
 </html>
