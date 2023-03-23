@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\CategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +26,19 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::group(['middleware' => ['auth','isAdmin']], function () {
+/*Route::group(['middleware' => ['auth','isAdmin']], function () {
 
     Route::get('/dashboard', function () {
-       return  view('layouts.admin');
+       return  view('admin.index');
     });
+ 
+ });*/
+
+ Route::middleware(['auth','isAdmin'])->group(function () {
+
+    Route::get('/dashboard',[FrontendController::class, 'index']);
+    Route::get('categories',[CategoryController::class, 'index']);
+    Route::post("insert-category",[CategoryController::class],'insert');
+    
  
  });
