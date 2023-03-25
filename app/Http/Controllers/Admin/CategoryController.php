@@ -9,8 +9,17 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     //
+
+    public function edit($id){
+        $category = Category::find($id);
+        return view('admin.category.edit',compact('category'));
+    }
+
+    
     public function index(){
-        return view("admin.category.index");
+        $category = Category::all();
+
+        return view("admin.category.index",compact('category'));
     }
 
     public function add(){
@@ -37,5 +46,8 @@ class CategoryController extends Controller
             $category->save();
             return redirect('/dashboard')->with('status',"caregory has been added succesfully");
     }
+
+
+    
 
 }

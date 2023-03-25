@@ -26,13 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-/*Route::group(['middleware' => ['auth','isAdmin']], function () {
 
-    Route::get('/dashboard', function () {
-       return  view('admin.index');
-    });
- 
- });*/
 
  Route::middleware(['auth','isAdmin'])->group(function () {
 
@@ -41,6 +35,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('add-category',[CategoryController::class, 'add']);
 
     Route::post("insert-category",[CategoryController::class,'insert']);
-    
+    Route::get('edit-product',[CategoryController::class,'edit']);
  
  });

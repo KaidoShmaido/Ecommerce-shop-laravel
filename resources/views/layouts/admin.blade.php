@@ -16,6 +16,8 @@
     <!--styles -->
 
     <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet" />
+    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet" />
+
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
  
 
