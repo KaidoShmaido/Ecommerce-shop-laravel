@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{$item ->id}}</td>
                         <td>
-                            <img src="{{ asset('assets/uploads/category/'.$item->image) }}" alt="">
+                            <img src="{{ asset('assets/uploads/category/'.$item->image) }}" alt="" class="img">
                         </td>
                         <td>{{$item ->name}}</td>
                         <td>{{$item ->description}}</td>

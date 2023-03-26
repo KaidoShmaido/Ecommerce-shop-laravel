@@ -12,7 +12,7 @@ class CategoryController extends Controller
 
     public function edit($id){
         $category = Category::find($id);
-        return view('admin.category.edit',compact('category'));
+        return view("admin.category.edit",compact('category'));
     }
 
     
@@ -25,8 +25,10 @@ class CategoryController extends Controller
     public function add(){
         return view("admin.category.add");
     }
+    
 
     public function insert(Request $request){
+      
         $category = new Category();
         if($request->hasFile('image')){
             $file = $request -> file('image');
@@ -46,7 +48,6 @@ class CategoryController extends Controller
             $category->save();
             return redirect('/dashboard')->with('status',"caregory has been added succesfully");
     }
-
 
     
 
