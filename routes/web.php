@@ -35,6 +35,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('add-category',[CategoryController::class, 'add']);
 
     Route::post("insert-category",[CategoryController::class,'insert']);
-    Route::get('edit-product/{id}',[CategoryController::class,'edit']);
+    Route::get('edit-category/{id}',[CategoryController::class,'edit']);
+    Route::get('update-category/{id}',[CategoryController::class,'update']);
+    Route::get('delete-category/{id}',[CategoryController::class,'destroy']);
+
+
+    Route::get('products',[ProductController::class,'index']);
+    
+    
  
  });

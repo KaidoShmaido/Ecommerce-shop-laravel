@@ -6,8 +6,9 @@
                         <h4>Edit/Update Category</h4>
                 </div>
                 <div class="card-body">
-                      <form action="{{url ('insert-category')}}" method="post">
+                      <form action="{{url ('update-category/'.$category->id)}}" method="PUT" enctype="multipart/form-data">
                       {{ csrf_field() }}
+                      @method('PUT')
                         <div class="row">
                                 <div class="col-sm-6">
                                         <label for="">Name</label>
@@ -39,21 +40,25 @@
                                 </div>
                                 <div class="col-sm-12">
                                         <label for="">Meta keywords</label>
-                                        <input type="text" name="meta_keywords" class="form-control" value="{{$category -> meta_keywords}}">
+                                        <input type="text" name="meta_keywords" class="form-control" > {{$category -> meta_keywords}}
 
                                 </div>
                                 <div class="col-sm-12">
                                         <label for="">Meta Description</label>
-                                        <textarea rows=3 class="form-control" >{{$category -> meta_description}} </textarea>
-
-                                </div>
-                                <div class="col-sm-12">
-                                        <label for="">image</label>
-                                        <input type="file" name="image" class="form-control" value="{{$category -> image}}">
+                                        <textarea rows=3 class="form-control"  name="meta_description">{{$category -> meta_description}} </textarea>
 
                                 </div>
 
+                                @if($category->image)
+                                <img src="{{ asset('assets/uploads/category/'.$category->image)}}" alt="" class="category-image">
+                                @endif
                                 <div class="col-sm-12">
+                                        
+                                        <input type="file" class="form-control" name="image" width="20%" >
+                                </div>
+
+                                <div class="col-sm-12">
+                                        
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                           </div>
