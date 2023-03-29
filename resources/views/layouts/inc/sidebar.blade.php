@@ -28,8 +28,8 @@
             </a>
           </li>
 
-          <li class="nav-item {{Request:: is('product') ? 'active':''}}">
-            <a class="nav-link" href="{{ url('product') }}">
+          <li class="nav-item {{Request:: is('products') ? 'active':''}}">
+            <a class="nav-link" href="{{ url('products') }}">
               <i class="material-icons">person</i>
               <p> product</p>
             </a>

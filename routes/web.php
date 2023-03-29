@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\ProductController;
+
 
 
 /*
@@ -41,7 +43,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
     Route::get('products',[ProductController::class,'index']);
-    
+    Route::get('add-product',[ProductController::class,'add']);
+    Route::post('insert-product',[ProductController::class,'insert']);
+ 
     
  
  });
