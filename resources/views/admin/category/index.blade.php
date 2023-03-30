@@ -27,8 +27,8 @@
                         <td>{{$item ->name}}</td>
                         <td>{{$item ->description}}</td>
                         <td>
-                            <a href="{{url ('edit-category/'.$item->id)}}" class="btn btn-primary">Edit</a>
-                            <a href="{{url('delete-category/'.$item->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="{{url ('edit-category/'.$item->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{url('delete-category/'.$item->id)}}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                   @endforeach

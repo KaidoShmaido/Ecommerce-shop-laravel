@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\frontend\FrontendHomeController;
+
+
 
 
 
@@ -19,9 +22,13 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/',[FrontendHomeController::class,'index']);
+
+
 
 Auth::routes();
 
@@ -45,6 +52,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('products',[ProductController::class,'index']);
     Route::get('add-product',[ProductController::class,'add']);
     Route::post('insert-product',[ProductController::class,'insert']);
+
+    Route::get('edit-product/{id}',[ProductController::class,'edit']);
+    Route::post('update-product/{id}',[ProductController::class,'update']);
+    Route::get('delete-product/{id}',[ProductController::class,'destroy']);
+
+
+
  
     
  
