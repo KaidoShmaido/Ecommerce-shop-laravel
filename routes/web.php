@@ -27,6 +27,12 @@ use App\Http\Controllers\frontend\FrontendHomeController;
 //});
 
 Route::get('/',[FrontendHomeController::class,'index']);
+Route::get('/category',[FrontendHomeController::class,'category']);
+Route::get('/view-category/{slug}',[FrontendHomeController::class,'viewcategory']);
+Route::get('/category/{cate_slug}/{prod_slug}',[FrontendHomeController::class,'productview']);
+
+
+
 
 
 

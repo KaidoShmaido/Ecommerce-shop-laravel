@@ -20,9 +20,21 @@
     <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet" />
 
+    <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('frontend/css/owl.theme.default.min.css') }}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
- 
+    <style>
+        a{
+            text-decoration: none !important;
+             color: #000 !important;
+        }
+    </style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -40,14 +52,17 @@
 
  
 
-     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
+<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
+<script src="{{ asset('frontend/js/jquery.min.js') }}" defer></script>
+<script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>
+
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  @if(session ('status'))
         <script>
             swal("{{session('status')}}")
         </script>
  @endif
-        @yield('scripts')
+@yield('scripts')
 
     
 </body>
