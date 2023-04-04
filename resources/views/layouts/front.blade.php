@@ -49,14 +49,18 @@
                 
     
 
-
- 
-
+         
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
 <script src="{{ asset('frontend/js/jquery.min.js') }}" defer></script>
 <script src="{{ asset('frontend/js/owl.carousel.min.js') }}" defer></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="path/to/your/jquery_file.js"><\/script>')</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  @if(session ('status'))
         <script>
             swal("{{session('status')}}")

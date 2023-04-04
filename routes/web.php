@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\FrontendHomeController;
+
 
 
 
@@ -40,7 +42,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::middleware(['auth'])->group(function () {
+      Route::post('add-to-cart',[CartController::class,"add_product"]);
+});
 
 
  Route::middleware(['auth','isAdmin'])->group(function () {
